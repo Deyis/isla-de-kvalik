@@ -1,5 +1,6 @@
 package com.example.dbmanager.client;
 
+import com.example.dbmanager.domain.AppContext;
 import com.example.dbmanager.domain.Person;
 import com.example.dbmanager.domain.Project;
 import com.extjs.gxt.ui.client.event.*;
@@ -13,14 +14,11 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DBManager implements EntryPoint {
     private final DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
     private PersonWindow personWindow = new PersonWindow();
     private ProjectWindow projectWindow = new ProjectWindow();
-    private Person currentUser;
+    private AppContext context;
 
     public void onModuleLoad() {
         Menu menuPersons = new Menu();
