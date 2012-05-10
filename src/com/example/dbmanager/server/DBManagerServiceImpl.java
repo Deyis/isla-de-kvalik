@@ -18,6 +18,11 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
 									DBManagerService {
     //projects
 
+    public List<Project> getProjectsByPersonId(Long id) {
+        Person person = findPersonById(id);
+        return person.getProjects();
+    }
+
     public Project findProjectById(Long id) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
@@ -37,6 +42,7 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     public Long saveProject(Project aProject) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
+        aProject.getPersons().add(new Person());
         session.save(aProject);
         session.getTransaction().commit();
         return aProject.getId();
@@ -60,6 +66,12 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     }
 
     // persons
+
+    public List<Person> getPersonsByPprojectId(Long id) {
+        Project project = findProjectById(id);
+        return project.getPersons();
+    }
+
     public Person login(String login, String password){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();

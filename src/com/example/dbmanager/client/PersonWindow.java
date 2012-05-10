@@ -49,7 +49,7 @@ public class PersonWindow  extends  Window{
         grid.addListener(Events.CellDoubleClick, new Listener<GridEvent<ModelData>>() {
             @Override
             public void handleEvent(GridEvent<ModelData> be) {
-                final EditPersonWindow editPersonWindow = new EditPersonWindow(be.getModel().get("firstName").toString(), be.getModel().get("lastName").toString(),(Integer) be.getModel().get("age"),(Integer) be.getModel().get("role"));
+                final EditPersonWindow editPersonWindow = new EditPersonWindow(be.getModel());
                 //editPersonWindow.setHeading(be.getModel().get("id").toString());
                 Long id =(Long) be.getModel().get("id");
                 final List<Person> pList = new ArrayList<Person>();

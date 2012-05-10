@@ -1,9 +1,8 @@
 package com.example.dbmanager.domain;
 
 import java.io.Serializable;
-import java.security.PublicKey;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Person implements Serializable{
 
@@ -14,6 +13,15 @@ public class Person implements Serializable{
     private int role;
     private String login;
     private String password;
+    private List<Project> projects = new ArrayList<Project>();
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
 
     public enum Role {
         Admin,

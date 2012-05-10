@@ -18,6 +18,7 @@ public interface DBManagerServiceAsync {
 	public void savePerson(Person personDTO, AsyncCallback<Long> callback);
 	public void updatePerson(Person personDTO, AsyncCallback callback);
 	public void removePerson(Long id, AsyncCallback<Integer> callback);
+    void getPersonsByPprojectId(Long id, AsyncCallback<List<Person>> async);
 
     //String greetServer(String name) throws IllegalArgumentException;
     // projects
@@ -26,4 +27,5 @@ public interface DBManagerServiceAsync {
     public void saveProject(Project projectDTO, AsyncCallback<Long> callback);
     public void updateProject(Project projectDTO, AsyncCallback callback);
     public void removeProject(Long id, AsyncCallback<Integer> callback);
+    void getProjectsByPersonId(Long id, AsyncCallback<List<Project>> async);
 }

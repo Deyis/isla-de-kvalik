@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="JPAQL" injector-id="xml">
+      <display-name>many-to-many/@entity-name</display-name>
+      <place><![CDATA[xmlAttribute().withLocalName(string().equalTo("entity-name")).withParent(xmlTag().withLocalName(string().equalTo("many-to-many")).withNamespace(string().equalTo("http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd")))]]></place>
+    </injection>
+  </component>
+</project>
+

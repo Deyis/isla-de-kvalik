@@ -21,6 +21,7 @@ public interface DBManagerService extends RemoteService {
 	public void updatePerson(Person aPerson);
 	public Integer removePerson(Long id);
     public Person login(String login, String password);
+    public List<Person> getPersonsByPprojectId(Long id);
 	//String greetServer(String name) throws IllegalArgumentException;
     // projects
     public List<Project> getProjects();
@@ -28,5 +29,6 @@ public interface DBManagerService extends RemoteService {
     public Long saveProject(Project aProject);
     public void updateProject(Project aProject);
     public Integer removeProject(Long id);
+    public List<Project> getProjectsByPersonId(Long id);
 
 }
