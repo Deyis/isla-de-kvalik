@@ -1,0 +1,285 @@
+====================================
+Types potentially sent from browser:
+====================================
+
+Reachable types computed on: Sun Jan 22 01:03:01 EET 2012
+com.example.dbmanager.domain.Person
+   Serialization status
+      Instantiable
+   Path
+      Started from 'com.example.dbmanager.domain.Person'
+
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
+   Serialization status
+      Instantiable
+   Path
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+com.google.gwt.user.client.rpc.XsrfToken
+   Serialization status
+      Instantiable
+   Path
+      Started from 'com.google.gwt.user.client.rpc.XsrfToken'
+
+int
+   Serialization status
+      Not serializable
+   Path
+      'int' is reachable from field 'age' of type 'com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable as a subtype of type 'class com.example.dbmanager.domain.Person'
+      Started from 'com.example.dbmanager.domain.Person'
+
+java.lang.Exception
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.Long
+   Serialization status
+      Instantiable
+   Path
+      Started from 'java.lang.Long'
+
+java.lang.Number
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Number' is reachable as a supertype of type 'class java.lang.Long'
+      'java.lang.Long' is reachable as a subtype of type 'class java.lang.Long'
+      Started from 'java.lang.Long'
+
+java.lang.RuntimeException
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.String
+   Serialization status
+      Instantiable
+   Path
+      Started from 'java.lang.String'
+
+java.lang.Throwable
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Throwable' is reachable as a supertype of type 'class java.lang.Exception'
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+===================================
+Types potentially sent from server:
+===================================
+
+Reachable types computed on: Sun Jan 22 01:03:01 EET 2012
+E
+   Serialization status
+      Not serializable
+   Path
+      'E' is reachable from field 'exposeElement' of type 'java.util.ArrayList<E>'
+      'java.util.ArrayList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+E
+   Serialization status
+      Not serializable
+   Path
+      'E' is reachable from field 'exposeElement' of type 'java.util.Vector<E>'
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+E
+   Serialization status
+      Not serializable
+   Path
+      'E' is reachable from field 'exposeElement' of type 'java.util.LinkedList<E>'
+      'java.util.LinkedList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+E
+   Serialization status
+      Not serializable
+   Path
+      'E' is reachable from field 'element' of type 'java.util.Collections.SingletonList<E>'
+      'java.util.Collections.SingletonList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+E[]
+   Serialization status
+      Not serializable
+   Path
+      'E[]' is reachable from field 'array' of type 'java.util.Arrays.ArrayList<E>'
+      'java.util.Arrays.ArrayList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+com.example.dbmanager.domain.Person
+   Serialization status
+      Instantiable
+   Path
+      'com.example.dbmanager.domain.Person' is reachable from type argument 0 of type 'java.util.Vector<E>'
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+com.example.dbmanager.domain.Person[]
+   Serialization status
+      Instantiable
+   Path
+      'com.example.dbmanager.domain.Person' is reachable from type argument 0 of type 'java.util.Arrays.ArrayList<E>'
+      'java.util.Arrays.ArrayList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException
+   Serialization status
+      Instantiable
+   Path
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+com.google.gwt.user.client.rpc.RpcTokenException
+   Serialization status
+      Instantiable
+   Path
+      Started from 'com.google.gwt.user.client.rpc.RpcTokenException'
+
+int
+   Serialization status
+      Not serializable
+   Path
+      'int' is reachable from field 'age' of type 'com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable as a subtype of type 'class com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable from type argument 0 of type 'java.util.Vector<E>'
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.lang.Exception
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.Integer
+   Serialization status
+      Instantiable
+   Path
+      Started from 'java.lang.Integer'
+
+java.lang.Long
+   Serialization status
+      Instantiable
+   Path
+      'java.lang.Long' is reachable from field 'id' of type 'com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable as a subtype of type 'class com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable from type argument 0 of type 'java.util.Vector<E>'
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.lang.Number
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Number' is reachable as a supertype of type 'class java.lang.Long'
+      'java.lang.Long' is reachable as a subtype of type 'class java.lang.Long'
+      'java.lang.Long' is reachable from field 'id' of type 'com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable as a subtype of type 'class com.example.dbmanager.domain.Person'
+      'com.example.dbmanager.domain.Person' is reachable from type argument 0 of type 'java.util.Vector<E>'
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.lang.RuntimeException
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.lang.String
+   Serialization status
+      Instantiable
+   Path
+      Started from 'java.lang.String'
+
+java.lang.Throwable
+   Serialization status
+      Field serializable
+   Path
+      'java.lang.Throwable' is reachable as a supertype of type 'class java.lang.Exception'
+      'java.lang.Exception' is reachable as a supertype of type 'class java.lang.RuntimeException'
+      'java.lang.RuntimeException' is reachable as a supertype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException' is reachable as a subtype of type 'class com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+      Started from 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException'
+
+java.util.ArrayList<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.ArrayList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.Arrays.ArrayList<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.Arrays.ArrayList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.Collections.EmptyList
+   Serialization status
+      Instantiable
+   Path
+      'java.util.Collections.EmptyList' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.Collections.SingletonList<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.Collections.SingletonList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.LinkedList<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.LinkedList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.LinkedList.Node<E>
+   Serialization status
+      Not serializable
+   Path
+      'java.util.LinkedList.Node<E>' is reachable from field 'header' of type 'java.util.LinkedList<E>'
+      'java.util.LinkedList<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.List<com.example.dbmanager.domain.Person>
+   Serialization status
+      Not serializable
+   Path
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.Stack<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.Stack<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+
+java.util.Vector<com.example.dbmanager.domain.Person>
+   Serialization status
+      Instantiable
+   Path
+      'java.util.Vector<com.example.dbmanager.domain.Person>' is reachable as a subtype of type 'interface java.util.List<com.example.dbmanager.domain.Person>'
+      Started from 'java.util.List<com.example.dbmanager.domain.Person>'
+

@@ -1,0 +1,2 @@
+serviceClass: com.example.dbmanager.client.GreetingService
+path: 1EE8D1DB2E3C63EAE452E9254730F665.gwt.rpc
