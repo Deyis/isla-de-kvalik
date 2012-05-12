@@ -8,6 +8,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
 
     public List<Project> getProjectsByPersonId(Long id) {
         Person person = findPersonById(id);
-        return person.getProjects();
+        return new ArrayList<Project>(person.getProjects());
     }
 
     public Project findProjectById(Long id) {
@@ -69,7 +70,7 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
 
     public List<Person> getPersonsByPprojectId(Long id) {
         Project project = findProjectById(id);
-        return project.getPersons();
+        return new ArrayList<Person>(project.getPersons());
     }
 
     public Person login(String login, String password){

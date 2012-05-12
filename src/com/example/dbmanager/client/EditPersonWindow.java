@@ -95,7 +95,7 @@ public class EditPersonWindow extends Window {
         formPanel.add(ageTF, new FormData("100%"));
         formPanel.add(roleTF, new FormData("100%"));
 
-        if (editPerson != null) {
+        if (editPerson.get(0) != null) {
             RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
                 @Override
                 protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {

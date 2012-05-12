@@ -2,7 +2,9 @@ package com.example.dbmanager.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Person implements Serializable{
 
@@ -13,13 +15,13 @@ public class Person implements Serializable{
     private int role;
     private String login;
     private String password;
-    private List<Project> projects = new ArrayList<Project>();
+    private Set<Project> projects = new HashSet<Project>(0);
 
-    public List<Project> getProjects() {
+    public Set<Project> getProjects() {
         return projects;
     }
 
-    public void setProjects(List<Project> projects) {
+    public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
 

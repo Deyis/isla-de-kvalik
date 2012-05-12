@@ -2,18 +2,20 @@ package com.example.dbmanager.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Project implements Serializable {
     private Long id;
     private String name;
-    private List<Person> persons = new ArrayList<Person>();
+    private Set<Person> persons = new HashSet<Person>(0);
 
-    public List<Person> getPersons() {
+    public Set<Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(List<Person> persons) {
+    public void setPersons(Set<Person> persons) {
         this.persons = persons;
     }
 
