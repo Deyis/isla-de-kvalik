@@ -1,9 +1,10 @@
 package com.example.dbmanager.domain;
 
+import com.example.dbmanager.client.PersonDTO;
+import com.example.dbmanager.client.ProjectDTO;
+
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Person implements Serializable{
@@ -17,6 +18,26 @@ public class Person implements Serializable{
     private String password;
     private Set<Project> projects = new HashSet<Project>(0);
 
+    public Person createPerson(PersonDTO personDTO) {
+        Person person = new Person();
+        person.setId(personDTO.getId());
+        person.setAge(personDTO.getAge());
+        person.setFirstName(personDTO.getFirstName());
+        person.setLastName(personDTO.getLastName());
+        person.setRole(personDTO.getRole());
+        person.setLogin(personDTO.getLogin());
+        person.setPassword(personDTO.getPassword());
+        Set<ProjectDTO> projectDTOs = personDTO.getProjects();
+        if(projectDTOs != null) {
+            Set<Project> projects = new HashSet<Project>(projectDTOs.size());
+            for(ProjectDTO projectDTO: projectDTOs) {
+                projects.add(new Project().createProject(projectDTO));
+            }
+            person.setProjects(projects);
+        }
+        return person;
+    }
+
     public Set<Project> getProjects() {
         return projects;
     }
@@ -28,7 +49,7 @@ public class Person implements Serializable{
     public enum Role {
         Admin,
         Developer,
-        ProjectMennager;
+        ProjectManager;
     }
 	
 	public Person() {}

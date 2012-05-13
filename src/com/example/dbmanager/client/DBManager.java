@@ -1,8 +1,6 @@
 package com.example.dbmanager.client;
 
-import com.example.dbmanager.domain.AppContext;
-import com.example.dbmanager.domain.Person;
-import com.example.dbmanager.domain.Project;
+import com.example.dbmanager.domain.*;
 import com.extjs.gxt.ui.client.event.*;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.extjs.gxt.ui.client.widget.menu.Menu;
@@ -18,7 +16,7 @@ public class DBManager implements EntryPoint {
     private final DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
     private PersonWindow personWindow = new PersonWindow();
     private ProjectWindow projectWindow = new ProjectWindow();
-    private AppContext context;
+//    private AppContext context;
 
     public void onModuleLoad() {
         Menu menuPersons = new Menu();
@@ -29,7 +27,7 @@ public class DBManager implements EntryPoint {
                 reloadPersons();
             }
         });
-        MenuItem item2 = new MenuItem("Create Person");
+        MenuItem item2 = new MenuItem("Create createPerson");
         item2.addSelectionListener(new SelectionListener<MenuEvent>() {
             @Override
             public void componentSelected(MenuEvent ce) {
@@ -47,7 +45,7 @@ public class DBManager implements EntryPoint {
                 reloadProjects();
             }
         });
-        MenuItem item21 = new MenuItem("Create Project");
+        MenuItem item21 = new MenuItem("Create createProject");
         item21.addSelectionListener(new SelectionListener<MenuEvent>() {
             @Override
             public void componentSelected(MenuEvent ce) {
@@ -75,8 +73,9 @@ public class DBManager implements EntryPoint {
         saveButton.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                final Project newProject = new Project();
-                newProject.setName(editProjectWindow.getName());
+//                Project pr = new Project();
+                Long id = new Long(1);
+                final ProjectDTO newProject = new ProjectDTO(id,editProjectWindow.getName(), null);
                 dbmanagerService.saveProject(newProject, new AsyncCallback<Long>() {
                     @Override
                     public void onFailure(Throwable caught) {
@@ -114,7 +113,7 @@ public class DBManager implements EntryPoint {
         saveButton.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                final Person newPerson = new Person();
+                final PersonDTO newPerson = new PersonDTO();
                 newPerson.setFirstName(editPersonWindow.getFirstName());
                 newPerson.setLastName(editPersonWindow.getLastName());
                 newPerson.setAge(editPersonWindow.getAge());

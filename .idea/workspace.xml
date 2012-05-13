@@ -62,107 +62,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PersonWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/PersonWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="51" selection-start="5570" selection-end="5570" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditPersonWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/EditPersonWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="28" selection-start="3607" selection-end="3607" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1437#1445#0" expanded="true" />
-                <element signature="e#4085#4112#0" expanded="true" />
-                <element signature="e#4189#4200#0" expanded="true" />
-                <element signature="e#4347#4358#0" expanded="true" />
-                <element signature="e#4940#4949#0" expanded="true" />
-                <element signature="e#7219#7233#0" expanded="true" />
-                <element signature="e#7433#7441#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBManager.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="43" selection-start="2636" selection-end="2636" vertical-scroll-proportion="0.6633663">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="58" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#427#436#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="62" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#306#314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBManagerServiceImpl.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DBManagerServiceImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/server/DBManagerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="62" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
+            <state line="52" column="21" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.7269737">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManager.gwt.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/DBManager.gwt.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManagerLogin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="4" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManagerService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="13" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#464#491#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.java">
+      <file leaf-file-name="ProjectDTO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="11" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.hbm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.hbm.xml">
+      <file leaf-file-name="DBManagerServiceAsync.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerServiceAsync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="42" selection-start="259" selection-end="267" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.hbm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.hbm.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="39" selection-start="789" selection-end="818" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.hbm.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.hbm.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="39" selection-start="602" selection-end="631" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="18" column="14" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,22 +144,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/EditProjectWindow.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectWindow.java" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerService.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerServiceAsync.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/EditPersonWindow.java" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/PersonWindow.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/AppContext.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManager.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectWindow.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerLogin.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/PersonBeanModel.java" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.java" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/server/DBManagerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.hbm.xml" />
         <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/EditPersonWindow.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/DocumentBeanModel.java" />
-        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectDTO.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/domain/ProjectBeanModel.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/DBManager.gwt.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerServiceAsync.java" />
+        <option value="$PROJECT_DIR$/src/com/example/dbmanager/client/DBManager.java" />
       </list>
     </option>
   </component>
@@ -235,6 +197,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,6 +214,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gwt-dbase-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt-dbase-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBManager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gwt-dbase-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="war" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,21 +349,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
@@ -411,6 +405,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -444,24 +456,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -475,6 +469,15 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -508,15 +511,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
-      <module name="" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -540,24 +534,24 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27589744" sideWeight="0.56157637" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.102564104" sideWeight="0.80131364" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.102564104" sideWeight="0.63711" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19868638" sideWeight="0.19794872" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36288998" sideWeight="0.39692307" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.6708464" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19868638" sideWeight="0.7948718" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36288998" sideWeight="0.59589744" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36615384" sideWeight="0.454844" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2923077" sideWeight="0.80131364" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28923076" sideWeight="0.63711" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.4923077" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -627,119 +621,121 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="28" selection-start="419" selection-end="419" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/util/HibernateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="128" selection-end="128" vertical-scroll-proportion="0.20118344" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerGWT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="4" selection-start="1292" selection-end="1292" vertical-scroll-proportion="-2.866864" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerServiceAsync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="76" selection-start="864" selection-end="864" vertical-scroll-proportion="0.48257372" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.8523316" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.1761658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="16" selection-start="2271" selection-end="2271" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="62" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#306#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/PersonWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="51" selection-start="5570" selection-end="5570" vertical-scroll-proportion="0.0">
+        <state line="14" column="4" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.java">
+    <entry file="file://$PROJECT_DIR$/war/DBManager.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="58" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#427#436#0" expanded="true" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/EditPersonWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/PersonBeanModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="28" selection-start="3607" selection-end="3607" vertical-scroll-proportion="0.0">
+        <state line="14" column="17" selection-start="371" selection-end="371" vertical-scroll-proportion="0.42902207">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1437#1445#0" expanded="true" />
-            <element signature="e#4085#4112#0" expanded="true" />
-            <element signature="e#4189#4200#0" expanded="true" />
-            <element signature="e#4347#4358#0" expanded="true" />
-            <element signature="e#4940#4949#0" expanded="true" />
-            <element signature="e#7219#7233#0" expanded="true" />
-            <element signature="e#7433#7441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/server/DBManagerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="62" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#464#491#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/DocumentBeanModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="298" selection-end="298" vertical-scroll-proportion="0.21518987">
+        <state line="13" column="17" selection-start="323" selection-end="323" vertical-scroll-proportion="0.3457627">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Project.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/ProjectBeanModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="602" selection-end="631" vertical-scroll-proportion="0.0">
+        <state line="13" column="16" selection-start="348" selection-end="348" vertical-scroll-proportion="0.2681388">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Person.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/ProjectDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="39" selection-start="789" selection-end="818" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.java">
+    <entry file="file://$PROJECT_DIR$/DBManager.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="11" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
+        <state line="106" column="38" selection-start="4674" selection-end="4674" vertical-scroll-proportion="0.05592105">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/domain/Document.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/DBManager.gwt.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="259" selection-end="267" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerServiceAsync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="14" selection-start="744" selection-end="744" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/client/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="43" selection-start="2636" selection-end="2636" vertical-scroll-proportion="0.6633663">
+        <state line="76" column="13" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/dbmanager/server/DBManagerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="21" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.7269737">
           <folding />
         </state>
       </provider>

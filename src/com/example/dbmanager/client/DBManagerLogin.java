@@ -1,22 +1,15 @@
 package com.example.dbmanager.client;
 
-import com.example.dbmanager.domain.Person;
 import com.extjs.gxt.ui.client.event.*;
-import com.extjs.gxt.ui.client.widget.Info;
 import com.extjs.gxt.ui.client.widget.Window;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.extjs.gxt.ui.client.widget.form.FormPanel;
 import com.extjs.gxt.ui.client.widget.form.TextField;
 import com.extjs.gxt.ui.client.widget.layout.FitLayout;
 import com.extjs.gxt.ui.client.widget.layout.FormData;
-import com.extjs.gxt.ui.client.widget.menu.Menu;
-import com.extjs.gxt.ui.client.widget.menu.MenuBar;
-import com.extjs.gxt.ui.client.widget.menu.MenuBarItem;
-import com.extjs.gxt.ui.client.widget.menu.MenuItem;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.RootPanel;
 
 public class DBManagerLogin implements EntryPoint {
     private final DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
@@ -35,7 +28,7 @@ public class DBManagerLogin implements EntryPoint {
         loginTF.setEmptyText("Login");
         passwordTF.setEmptyText("Password");
 
-        formPanel.setHeading("Edit Person");
+        formPanel.setHeading("Edit createPerson");
         formPanel.setWidth(350);
         loginTF.setAllowBlank(false);
         loginTF.setFieldLabel("Login");
@@ -51,14 +44,14 @@ public class DBManagerLogin implements EntryPoint {
             @Override
             public void handleEvent(BaseEvent be) {
 
-                dbmanagerService.login(loginTF.getValue().toString(),passwordTF.getValue().toString(), new AsyncCallback<Person>() {
+                dbmanagerService.login(loginTF.getValue().toString(),passwordTF.getValue().toString(), new AsyncCallback<PersonDTO>() {
                     @Override
                     public void onFailure(Throwable caught) {
                         loginWindow.setHeading("Fail");
                     }
 
                     @Override
-                    public void onSuccess(Person result) {
+                    public void onSuccess(PersonDTO result) {
                         loginWindow.setHeading("Success " + result.getLogin());
                         if (result.getRole() == 1) {
 
@@ -78,13 +71,13 @@ public class DBManagerLogin implements EntryPoint {
         personWindow.close();
     }
 
-    private void createPerson() {
+   /* private void createPerson() {
         final EditPersonWindow editPersonWindow = new EditPersonWindow();
         Button saveButton = new Button("Save");
         saveButton.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                final Person newPerson = new Person();
+                final createPerson newPerson = new createPerson();
                 newPerson.setFirstName(editPersonWindow.getFirstName());
                 newPerson.setLastName(editPersonWindow.getLastName());
                 newPerson.setAge(editPersonWindow.getAge());
@@ -109,5 +102,5 @@ public class DBManagerLogin implements EntryPoint {
         editPersonWindow.addButton(saveButton);
         editPersonWindow.addButton(cancelButton);
         editPersonWindow.show();
-    }
+    }*/
 }

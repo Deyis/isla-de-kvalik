@@ -1,7 +1,5 @@
 package com.example.dbmanager.client;
 
-import com.example.dbmanager.domain.Person;
-import com.example.dbmanager.domain.Project;
 import com.extjs.gxt.ui.client.data.*;
 import com.extjs.gxt.ui.client.event.BaseEvent;
 import com.extjs.gxt.ui.client.event.Events;
@@ -11,7 +9,6 @@ import com.extjs.gxt.ui.client.store.ListStore;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.Window;
 import com.extjs.gxt.ui.client.widget.button.Button;
-import com.extjs.gxt.ui.client.widget.form.NumberField;
 import com.extjs.gxt.ui.client.widget.form.TextField;
 import com.extjs.gxt.ui.client.widget.grid.*;
 import com.extjs.gxt.ui.client.widget.layout.FitLayout;
@@ -28,9 +25,9 @@ public class ProjectWindow extends  Window{
     public void reloadProjects(){
         projectWindow =  new ProjectWindow();
 
-        RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
+        RpcProxy<List<ProjectDTO>> proxy = new RpcProxy<List<ProjectDTO>>() {
             @Override
-            protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {
+            protected void load(Object loadConfig, AsyncCallback<List<ProjectDTO>> callback) {
                 dbmanagerService.getProjects(callback);
             }
         };
@@ -56,14 +53,14 @@ public class ProjectWindow extends  Window{
                 final EditProjectWindow editProjectWindow = new EditProjectWindow(be.getModel().get("name").toString());
                 //editProjectWindow.setHeading(be.getModel().get("id").toString());
                 Long id = (Long) be.getModel().get("id");
-                final List<Project> pList = new ArrayList<Project>();
-                dbmanagerService.findProjectById(id, new AsyncCallback<Project>() {
+                final List<ProjectDTO> pList = new ArrayList<ProjectDTO>();
+                dbmanagerService.findProjectById(id, new AsyncCallback<ProjectDTO>() {
                     @Override
                     public void onFailure(Throwable caught) {
                     }
 
                     @Override
-                    public void onSuccess(Project result) {
+                    public void onSuccess(ProjectDTO result) {
                         pList.add(result);
                     }
                 });
@@ -72,7 +69,7 @@ public class ProjectWindow extends  Window{
                     @Override
                     public void handleEvent(BaseEvent be) {
                         if (pList.size() > 0) {
-                            final Project updateProject = pList.get(0);
+                            final ProjectDTO updateProject = pList.get(0);
                             updateProject.setName(editProjectWindow.getName());
                             dbmanagerService.updateProject(updateProject, new AsyncCallback() {
                                 @Override
@@ -105,7 +102,7 @@ public class ProjectWindow extends  Window{
 
         projectWindow.setPlain(true);
         projectWindow.setSize(600, 400);
-        projectWindow.setHeading("Project");
+        projectWindow.setHeading("createProject");
         projectWindow.setLayout(new FitLayout());
         projectWindow.add(panel);
         projectWindow.show();

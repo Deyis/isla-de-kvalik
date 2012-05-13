@@ -35,7 +35,7 @@ public class EditProjectWindow extends Window {
         this.setSize(350, 250);
         this.setLayout(new FitLayout());
 
-        formPanel.setHeading("Edit Person");
+        formPanel.setHeading("Edit createPerson");
         formPanel.setWidth(350);
         nameTF.setAllowBlank(false);
         nameTF.setFieldLabel("Name");

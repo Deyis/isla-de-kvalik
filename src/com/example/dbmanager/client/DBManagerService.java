@@ -1,10 +1,7 @@
 package com.example.dbmanager.client;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import com.example.dbmanager.domain.Person;
-import com.example.dbmanager.domain.Project;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
@@ -15,20 +12,20 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface DBManagerService extends RemoteService {
 
     //persons
-    public Person findPersonById(Long id);
-	public List<Person> getPeople();
-	public Long savePerson(Person aPerson);
-	public void updatePerson(Person aPerson);
+    public PersonDTO findPersonById(Long id);
+	public List<PersonDTO> getPeople();
+	public Long savePerson(PersonDTO aPersonDTO);
+	public void updatePerson(PersonDTO aPersonDTO);
 	public Integer removePerson(Long id);
-    public Person login(String login, String password);
-    public List<Person> getPersonsByPprojectId(Long id);
+    public PersonDTO login(String login, String password);
+    public List<PersonDTO> getPersonsByPprojectId(Long id);
 	//String greetServer(String name) throws IllegalArgumentException;
     // projects
-    public List<Project> getProjects();
-    public Project findProjectById(Long id);
-    public Long saveProject(Project aProject);
-    public void updateProject(Project aProject);
+    public List<ProjectDTO> getProjects();
+    public ProjectDTO findProjectById(Long id);
+    public Long saveProject(ProjectDTO aProjectDTO);
+    public void updateProject(ProjectDTO aProjectDTO);
     public Integer removeProject(Long id);
-    public List<Project> getProjectsByPersonId(Long id);
+    public List<ProjectDTO> getProjectsByPersonId(Long id);
 
 }

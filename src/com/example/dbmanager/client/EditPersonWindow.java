@@ -1,14 +1,11 @@
 package com.example.dbmanager.client;
 
-import com.example.dbmanager.domain.Person;
-import com.example.dbmanager.domain.Project;
 import com.extjs.gxt.ui.client.data.*;
 import com.extjs.gxt.ui.client.event.BaseEvent;
 import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.GridEvent;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.store.ListStore;
-import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.Window;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.extjs.gxt.ui.client.widget.form.FormPanel;
@@ -30,7 +27,7 @@ public class EditPersonWindow extends Window {
     private final TextField ageTF = new TextField();
     private final TextField roleTF = new TextField();
     private final FormPanel formPanel = new FormPanel();
-    final List<Person> editPerson = new ArrayList<Person>();
+    final List<PersonDTO> editPerson = new ArrayList<PersonDTO>();
 
     public int getRoleTF() {
         return Integer.decode(roleTF.getValue().toString());
@@ -58,10 +55,10 @@ public class EditPersonWindow extends Window {
     public EditPersonWindow(ModelData model) {
         Long id =(Long) model.get("id");
 
-        dbmanagerService.findPersonById(id, new AsyncCallback<Person>() {
+        dbmanagerService.findPersonById(id, new AsyncCallback<PersonDTO>() {
             @Override public void onFailure(Throwable caught) {}
             @Override
-            public void onSuccess(Person result) {
+            public void onSuccess(PersonDTO result) {
                 editPerson.add(result);
             }
         });
@@ -79,7 +76,7 @@ public class EditPersonWindow extends Window {
         this.setSize(350, 250);
         this.setLayout(new FitLayout());
 
-        formPanel.setHeading("Edit Person");
+        formPanel.setHeading("Edit createPerson");
         formPanel.setWidth(350);
         firstNameTF.setAllowBlank(false);
         firstNameTF.setFieldLabel("First Name");
@@ -96,9 +93,9 @@ public class EditPersonWindow extends Window {
         formPanel.add(roleTF, new FormData("100%"));
 
         if (editPerson.get(0) != null) {
-            RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
+            RpcProxy<List<ProjectDTO>> proxy = new RpcProxy<List<ProjectDTO>>() {
                 @Override
-                protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {
+                protected void load(Object loadConfig, AsyncCallback<List<ProjectDTO>> callback) {
                     dbmanagerService.getProjectsByPersonId(editPerson.get(0).getId(),callback);
                 }
             };
@@ -118,14 +115,14 @@ public class EditPersonWindow extends Window {
                     final EditProjectWindow editProjectWindow = new EditProjectWindow(be.getModel().get("name").toString());
                     //editProjectWindow.setHeading(be.getModel().get("id").toString());
                     Long id = (Long) be.getModel().get("id");
-                    final List<Project> pList = new ArrayList<Project>();
-                    dbmanagerService.findProjectById(id, new AsyncCallback<Project>() {
+                    final List<ProjectDTO> pList = new ArrayList<ProjectDTO>();
+                    dbmanagerService.findProjectById(id, new AsyncCallback<ProjectDTO>() {
                         @Override
                         public void onFailure(Throwable caught) {
                         }
 
                         @Override
-                        public void onSuccess(Project result) {
+                        public void onSuccess(ProjectDTO result) {
                             pList.add(result);
                         }
                     });
@@ -134,7 +131,7 @@ public class EditPersonWindow extends Window {
                         @Override
                         public void handleEvent(BaseEvent be) {
                             if (pList.size() > 0) {
-                                final Project updateProject = pList.get(0);
+                                final ProjectDTO updateProject = pList.get(0);
                                 updateProject.setName(editProjectWindow.getName());
                                 dbmanagerService.updateProject(updateProject, new AsyncCallback() {
                                     @Override

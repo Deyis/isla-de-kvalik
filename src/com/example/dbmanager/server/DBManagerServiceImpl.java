@@ -1,15 +1,18 @@
 package com.example.dbmanager.server;
 
 import com.example.dbmanager.client.DBManagerService;
-import com.example.dbmanager.domain.Person;
-import com.example.dbmanager.domain.Project;
+import com.example.dbmanager.client.PersonDTO;
+import com.example.dbmanager.client.ProjectDTO;
+import com.example.dbmanager.domain.*;
 import com.example.dbmanager.util.HibernateUtil;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The server side implementation of the RPC service.
@@ -19,40 +22,49 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
 									DBManagerService {
     //projects
 
-    public List<Project> getProjectsByPersonId(Long id) {
-        Person person = findPersonById(id);
-        return new ArrayList<Project>(person.getProjects());
+    public List<ProjectDTO> getProjectsByPersonId(Long id) {
+        PersonDTO personDTO  = findPersonById(id);
+        return new ArrayList<ProjectDTO>(personDTO.getProjects());
     }
 
-    public Project findProjectById(Long id) {
+    public ProjectDTO findProjectById(Long id) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List<Project> res = session.createQuery("from Project where id = " + id).list();
+        List<Project> res = session.createQuery("from createProject where id = " + id).list();
+        ProjectDTO projectDTO = createProjectDTO(res.get(0));
         session.getTransaction().commit();
-        return res.get(0);
+        return projectDTO;
     }
 
-    public List<Project> getProjects() {
+    public List<ProjectDTO> getProjects() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List<Project> projects = session.createQuery("from Project").list();
+        List<Project> projects = session.createQuery("from createProject").list();
+        List<ProjectDTO> projectDTOs = new ArrayList<ProjectDTO>(projects != null ? projects.size() : 0);
+        if (projects != null) {
+            for (Project project : projects) {
+                projectDTOs.add(createProjectDTO(project));
+            }
+        }
         session.getTransaction().commit();
-        return projects;
+        return projectDTOs;
     }
 
-    public Long saveProject(Project aProject) {
+    public Long saveProject(ProjectDTO aProjectDTO) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        aProject.getPersons().add(new Person());
-        session.save(aProject);
+        Project project = new Project();
+        project.setName(aProjectDTO.getName());
+        session.save(project);
         session.getTransaction().commit();
-        return aProject.getId();
+        return project.getId();
     }
 
-    public void updateProject(Project aProject) {
+    public void updateProject(ProjectDTO aProjectDTO) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        session.update(aProject);
+        Project project = new Project().createProject(aProjectDTO);
+        session.update(project);
         session.getTransaction().commit();
     }
 
@@ -60,7 +72,7 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     public Integer removeProject(Long id) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        Query query = session.createQuery("delete from Project where id = " + id);
+        Query query = session.createQuery("delete from createProject where id = " + id);
         int i = new Integer(query.executeUpdate());
         session.getTransaction().commit();
         return i;
@@ -68,57 +80,95 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
 
     // persons
 
-    public List<Person> getPersonsByPprojectId(Long id) {
-        Project project = findProjectById(id);
-        return new ArrayList<Person>(project.getPersons());
+    public List<PersonDTO> getPersonsByPprojectId(Long id) {
+        ProjectDTO projectDTO = findProjectById(id);
+        return new ArrayList<PersonDTO>(projectDTO.getPersons());
     }
 
-    public Person login(String login, String password){
+    public PersonDTO login(String login, String password){
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List<Person> res = session.createQuery("from Person where login = '" + login+"' and password = '"+password+"'").list();
+        List<Person> res = session.createQuery("from createPerson where login = '" + login+"' and password = '"+password+"'").list();
+        PersonDTO personDTO = createPersonDTO(res.get(0));
         session.getTransaction().commit();
-        return res.get(0);
+        return personDTO;
     }
 
-    public Person findPersonById(Long id) {
+    public PersonDTO findPersonById(Long id) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List<Person> res = session.createQuery("from Person where id = " + id).list();
+        List<Person> res = session.createQuery("from createPerson where id = " + id).list();
+        PersonDTO personDTO = createPersonDTO(res.get(0));
         session.getTransaction().commit();
-        return res.get(0);
+        return personDTO;
     }
 
-  	public List<Person> getPeople() {
+  	public List<PersonDTO> getPeople() {
   		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
   		session.beginTransaction();
-  		List<Person> people = session.createQuery("from Person").list();
+  		List<Person> people = session.createQuery("from createPerson").list();
+        List<PersonDTO> personDTOs = new ArrayList<PersonDTO>(people != null ? people.size() : 0);
+        if (people != null) {
+            for (Person person : people) {
+                personDTOs.add(createPersonDTO(person));
+            }
+        }
   		session.getTransaction().commit();
-	  	return people;
+	  	return personDTOs;
   	}
 
-	public Long savePerson(Person aPerson) {
+	public Long savePerson(PersonDTO aPersonDTO) {
 	    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 	    session.beginTransaction();
-	    session.save(aPerson);
+        Person person = new Person();
+        person.setAge(aPersonDTO.getAge());
+        person.setFirstName(aPersonDTO.getFirstName());
+        person.setLastName(aPersonDTO.getLastName());
+        person.setLogin(aPersonDTO.getLogin());
+        person.setPassword(aPersonDTO.getPassword());
+        person.setRole(aPersonDTO.getRole());
+	    session.save(person);
 	    session.getTransaction().commit();
-	    return aPerson.getId();
+	    return person.getId();
 	}
 
-	public void updatePerson(Person aPerson) {
+	public void updatePerson(PersonDTO aPersonDTO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Person person = new Person().createPerson(aPersonDTO);
 		session.beginTransaction();
-		session.update(aPerson);
+		session.update(person);
 		session.getTransaction().commit();
 	}
 
-	
+
 	public Integer removePerson(Long id) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Query query = session.createQuery("delete from Person where id = " + id);
+		Query query = session.createQuery("delete from createPerson where id = " + id);
         int i = new Integer(query.executeUpdate());
         session.getTransaction().commit();
 		return i;
 	}
+
+    private PersonDTO createPersonDTO(Person person){
+        Set<Project> projects = person.getProjects();
+        Set<ProjectDTO> projectDTOs = new HashSet<ProjectDTO>(projects != null ? projects.size() : 0);
+        if(projects != null) {
+            for(Project project: projects) {
+                projectDTOs.add(createProjectDTO(project));
+            }
+        }
+        return new PersonDTO(person.getId(),person.getAge(), person.getFirstName(), person.getLastName(), person.getRole(), person.getLogin(), person.getPassword(), projectDTOs);
+    }
+    private ProjectDTO createProjectDTO(Project project){
+        Set<Person> persons = project.getPersons();
+        Set<PersonDTO> personDTOs = new HashSet<PersonDTO>(persons != null ? persons.size() : 0);
+        if(persons != null) {
+            for(Person person: persons) {
+                personDTOs.add(createPersonDTO(person));
+            }
+        }
+        return new ProjectDTO(project.getId(), project.getName(), personDTOs);
+    }
+
 }

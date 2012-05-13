@@ -10,7 +10,7 @@
 		</id>
 		<property name="name"/>
 
-        <set name="persons" table="PROJECT_PERSON" inverse="true" lazy="true" fetch="select">
+        <set name="persons" table="PROJECT_PERSON" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="PROJECT_ID" not-null="true" />
             </key>

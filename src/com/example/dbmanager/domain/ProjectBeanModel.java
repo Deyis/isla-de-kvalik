@@ -7,10 +7,11 @@
  */
 package com.example.dbmanager.domain;
 
+import com.example.dbmanager.client.ProjectDTO;
 import com.extjs.gxt.ui.client.data.BeanModelMarker;
 import com.extjs.gxt.ui.client.data.BeanModelMarker.BEAN;
 
-@BEAN(Project.class)
+@BEAN(ProjectDTO.class)
 public interface ProjectBeanModel extends BeanModelMarker {
 
 }

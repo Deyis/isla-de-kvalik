@@ -16,7 +16,7 @@
         <property name="password"/>
 
         <set name="projects" table="PROJECT_PERSON"
-             inverse="false" lazy="true" fetch="select" cascade="all" >
+             inverse="false" lazy="false" fetch="select" cascade="all" >
             <key>
                 <column name="PERSON_ID" not-null="true" />
             </key>

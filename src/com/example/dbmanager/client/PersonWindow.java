@@ -1,6 +1,5 @@
 package com.example.dbmanager.client;
 
-import com.example.dbmanager.domain.Person;
 import com.extjs.gxt.ui.client.data.*;
 import com.extjs.gxt.ui.client.event.*;
 import com.extjs.gxt.ui.client.store.ListStore;
@@ -11,7 +10,6 @@ import com.extjs.gxt.ui.client.widget.form.NumberField;
 import com.extjs.gxt.ui.client.widget.form.TextField;
 import com.extjs.gxt.ui.client.widget.grid.*;
 import com.extjs.gxt.ui.client.widget.layout.FitLayout;
-import com.google.gwt.cell.client.TextButtonCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import java.util.ArrayList;
@@ -24,9 +22,9 @@ public class PersonWindow  extends  Window{
     public void reloadPersons(){
         personWindow =  new PersonWindow();
 
-        RpcProxy<List<Person>> proxy = new RpcProxy<List<Person>>() {
+        RpcProxy<List<PersonDTO>> proxy = new RpcProxy<List<PersonDTO>>() {
             @Override
-            protected void load(Object loadConfig, AsyncCallback<List<Person>> callback) {
+            protected void load(Object loadConfig, AsyncCallback<List<PersonDTO>> callback) {
                 dbmanagerService.getPeople(callback);
             }
         };
@@ -52,11 +50,11 @@ public class PersonWindow  extends  Window{
                 final EditPersonWindow editPersonWindow = new EditPersonWindow(be.getModel());
                 //editPersonWindow.setHeading(be.getModel().get("id").toString());
                 Long id =(Long) be.getModel().get("id");
-                final List<Person> pList = new ArrayList<Person>();
-                dbmanagerService.findPersonById(id, new AsyncCallback<Person>() {
+                final List<PersonDTO> pList = new ArrayList<PersonDTO>();
+                dbmanagerService.findPersonById(id, new AsyncCallback<PersonDTO>() {
                     @Override public void onFailure(Throwable caught) {}
                     @Override
-                    public void onSuccess(Person result) {
+                    public void onSuccess(PersonDTO result) {
                         pList.add(result);
                     }
                 });
@@ -65,7 +63,7 @@ public class PersonWindow  extends  Window{
                     @Override
                     public void handleEvent(BaseEvent be) {
                         if (pList.size()>0) {
-                            final Person updatePerson = pList.get(0);
+                            final PersonDTO updatePerson = pList.get(0);
                             updatePerson.setFirstName(editPersonWindow.getFirstName());
                             updatePerson.setLastName(editPersonWindow.getLastName());
                             updatePerson.setAge(editPersonWindow.getAge());
@@ -97,7 +95,7 @@ public class PersonWindow  extends  Window{
 
         personWindow.setPlain(true);
         personWindow.setSize(600, 400);
-        personWindow.setHeading("Person");
+        personWindow.setHeading("createPerson");
         personWindow.setLayout(new FitLayout());
         personWindow.add(panel);
         personWindow.show();
