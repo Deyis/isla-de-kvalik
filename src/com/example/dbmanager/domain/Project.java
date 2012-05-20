@@ -9,14 +9,22 @@ import java.util.Set;
 public class Project implements Serializable {
     private Long id;
     private String name;
-    private Set<Person> persons = new HashSet<Person>(0);
+    private Long managerId;
+//    private Set<Person> persons = new HashSet<Person>(0);
+//
+//    public Set<Person> getPersons() {
+//        return persons;
+//    }
+//
+//    public void setPersons(Set<Person> persons) {
+//        this.persons = persons;
+//    }
+    public Long getManagerId() {
+    return managerId;
+}
 
-    public Set<Person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(Set<Person> persons) {
-        this.persons = persons;
+    public void setManagerId(Long managerId) {
+        this.managerId = managerId;
     }
 
     public Long getId() {

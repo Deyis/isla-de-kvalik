@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.example.dbmanager.domain">
+	<class name="Person_Project" table="PROJECT_PERSON">
+		<id name="id" column="PROJECT_PERSON_ID">
+			<generator class="native"/>
+		</id>
+		<property name="personId" column="PERSON_ID"/>
+        <property name="projectId" column="PROJECT_ID"/>
+
+	</class>
+</hibernate-mapping>

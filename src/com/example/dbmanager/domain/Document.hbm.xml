@@ -10,5 +10,8 @@
 		</id>
 		<property name="name"/>
 		<property name="state"/>
+        <property name="projectId"/>
+        <property name="performerId"/>
+
 	</class>
 </hibernate-mapping>

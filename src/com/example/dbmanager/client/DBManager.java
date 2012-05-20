@@ -57,9 +57,22 @@ public class DBManager implements EntryPoint {
         menuProjects.add(item11);
         menuProjects.add(item21);
 
+        Menu menuAddPersonToProject = new Menu();
+        MenuItem itemPTP1 = new MenuItem("Add");
+        itemPTP1.addSelectionListener(new SelectionListener<MenuEvent>() {
+            @Override
+            public void componentSelected(MenuEvent ce) {
+                addPersonToProject();
+            }
+        });
+        menuAddPersonToProject.add(itemPTP1);
+
+
+
         MenuBar bar = new MenuBar();
         bar.add(new MenuBarItem("Persons", menuPersons));
         bar.add(new MenuBarItem("Projects", menuProjects));
+        bar.add(new MenuBarItem("Add Person to Project",menuAddPersonToProject));
         RootPanel.get().add(bar);
     }
 
@@ -100,6 +113,12 @@ public class DBManager implements EntryPoint {
         editProjectWindow.addButton(saveButton);
         editProjectWindow.addButton(cancelButton);
         editProjectWindow.show();
+    }
+
+    private void addPersonToProject() {
+        ListProjectsToAddPersonsWindow lPTP = new ListProjectsToAddPersonsWindow();
+        lPTP.reloadProjects();
+        lPTP.close();
     }
 
     private void reloadPersons(){

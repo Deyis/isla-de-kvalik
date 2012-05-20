@@ -53,7 +53,7 @@ public class ProjectWindow extends  Window{
         grid.addListener(Events.CellDoubleClick, new Listener<GridEvent<ModelData>>() {
             @Override
             public void handleEvent(GridEvent<ModelData> be) {
-                final EditProjectWindow editProjectWindow = new EditProjectWindow(be.getModel().get("name").toString());
+                final EditProjectWindow editProjectWindow = new EditProjectWindow(be.getModel());
                 //editProjectWindow.setHeading(be.getModel().get("id").toString());
                 Long id = (Long) be.getModel().get("id");
                 final List<Project> pList = new ArrayList<Project>();

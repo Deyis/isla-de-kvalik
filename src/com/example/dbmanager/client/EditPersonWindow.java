@@ -30,7 +30,9 @@ public class EditPersonWindow extends Window {
     private final TextField ageTF = new TextField();
     private final TextField roleTF = new TextField();
     private final FormPanel formPanel = new FormPanel();
-    final List<Person> editPerson = new ArrayList<Person>();
+    private Long editPersonId  = new Long(0) ;
+    private ModelData modelData;
+
 
     public int getRoleTF() {
         return Integer.decode(roleTF.getValue().toString());
@@ -56,15 +58,8 @@ public class EditPersonWindow extends Window {
     }
     
     public EditPersonWindow(ModelData model) {
-        Long id =(Long) model.get("id");
-
-        dbmanagerService.findPersonById(id, new AsyncCallback<Person>() {
-            @Override public void onFailure(Throwable caught) {}
-            @Override
-            public void onSuccess(Person result) {
-                editPerson.add(result);
-            }
-        });
+        editPersonId = (Long) model.get("id");
+        modelData = model;
         init();
         this.setHeading("Редагування");
         firstNameTF.setValue(model.get("firstName").toString());
@@ -76,7 +71,7 @@ public class EditPersonWindow extends Window {
 
     private void init(){
         this.setPlain(true);
-        this.setSize(350, 250);
+        this.setSize(450, 350);
         this.setLayout(new FitLayout());
 
         formPanel.setHeading("Edit Person");
@@ -95,11 +90,12 @@ public class EditPersonWindow extends Window {
         formPanel.add(ageTF, new FormData("100%"));
         formPanel.add(roleTF, new FormData("100%"));
 
-        if (editPerson.get(0) != null) {
+
+        if (editPersonId != 0) {
             RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
                 @Override
                 protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {
-                    dbmanagerService.getProjectsByPersonId(editPerson.get(0).getId(),callback);
+                    dbmanagerService.getProjectsByPersonId(editPersonId, callback);
                 }
             };
             BeanModelReader reader = new BeanModelReader();
@@ -110,59 +106,16 @@ public class EditPersonWindow extends Window {
 
             ColumnModel cm = new ColumnModel(getColumnConfig());
 
+            ContentPanel panel = new ContentPanel();
+            panel.setHeading("testTitle");
+            panel.setFrame(true);
+            panel.setSize("350", "150");
+            panel.setLayout(new FitLayout());
+
             Grid<BeanModel> grid = new Grid<BeanModel>(store, cm);
-            //grid.setAutoExpandColumn("Name");
-            grid.addListener(Events.CellDoubleClick, new Listener<GridEvent<ModelData>>() {
-                @Override
-                public void handleEvent(GridEvent<ModelData> be) {
-                    final EditProjectWindow editProjectWindow = new EditProjectWindow(be.getModel().get("name").toString());
-                    //editProjectWindow.setHeading(be.getModel().get("id").toString());
-                    Long id = (Long) be.getModel().get("id");
-                    final List<Project> pList = new ArrayList<Project>();
-                    dbmanagerService.findProjectById(id, new AsyncCallback<Project>() {
-                        @Override
-                        public void onFailure(Throwable caught) {
-                        }
 
-                        @Override
-                        public void onSuccess(Project result) {
-                            pList.add(result);
-                        }
-                    });
-                    Button saveButton = new Button("Save");
-                    saveButton.addListener(Events.OnClick, new Listener<BaseEvent>() {
-                        @Override
-                        public void handleEvent(BaseEvent be) {
-                            if (pList.size() > 0) {
-                                final Project updateProject = pList.get(0);
-                                updateProject.setName(editProjectWindow.getName());
-                                dbmanagerService.updateProject(updateProject, new AsyncCallback() {
-                                    @Override
-                                    public void onFailure(Throwable caught) {
-                                    }
-
-                                    @Override
-                                    public void onSuccess(Object result) {
-                                        editProjectWindow.setHeading("yahoo");
-                                        //editProjectWindow.close();
-                                    }
-                                });
-                            }
-                        }
-                    });
-                    Button cancelButton = new Button("Cancel");
-                    cancelButton.addListener(Events.OnClick, new Listener<BaseEvent>() {
-                        @Override
-                        public void handleEvent(BaseEvent be) {
-                            editProjectWindow.close();
-                        }
-                    });
-                    editProjectWindow.addButton(saveButton);
-                    editProjectWindow.addButton(cancelButton);
-                    editProjectWindow.show();
-                }
-            });
-            formPanel.add(grid);
+            panel.add(grid);
+            formPanel.add(panel);
         }
 
     }
@@ -179,6 +132,7 @@ public class EditPersonWindow extends Window {
         columns.add(column);
 
         column = new ColumnConfig("delete", "Delete", 70);
+        final EditPersonWindow thisWindow = this;
         column.setRenderer(new GridCellRenderer() {
             @Override
             public Object render(ModelData model, String property, ColumnData config, int rowIndex, int colIndex, ListStore listStore, Grid grid) {
@@ -187,10 +141,12 @@ public class EditPersonWindow extends Window {
                 button.addListener(Events.OnClick, new Listener<BaseEvent>() {
                     @Override
                     public void handleEvent(BaseEvent be) {
-                        dbmanagerService.removeProject(id, new AsyncCallback<Integer>() {
+                        dbmanagerService.removeProjectFromPersonByIds(editPersonId, id, new AsyncCallback<Integer>() {
                             @Override public void onFailure(Throwable caught) {}
                             @Override
                             public void onSuccess(Integer result) {
+                                thisWindow.close();
+                                thisWindow.reloadWindow();
 //                                projectWindow.close();
 //                                projectWindow.reloadProjects();
                             }
@@ -202,5 +158,10 @@ public class EditPersonWindow extends Window {
         });
         columns.add(column);
         return columns;
+    }
+
+    private void reloadWindow() {
+        EditPersonWindow tmp = new EditPersonWindow(modelData);
+        tmp.show();
     }
 }

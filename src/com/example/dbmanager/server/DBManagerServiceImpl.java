@@ -1,12 +1,15 @@
 package com.example.dbmanager.server;
 
 import com.example.dbmanager.client.DBManagerService;
+import com.example.dbmanager.domain.Document;
 import com.example.dbmanager.domain.Person;
+import com.example.dbmanager.domain.Person_Project;
 import com.example.dbmanager.domain.Project;
 import com.example.dbmanager.util.HibernateUtil;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hsqldb.persist.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +20,74 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class DBManagerServiceImpl extends RemoteServiceServlet implements
 									DBManagerService {
-    //projects
+    //documents
+    public List<Document> getDocuments() {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Document> documents = session.createQuery("from Document").list();
+        session.getTransaction().commit();
+        return documents;
+    }
 
+    public Document findDocumentById(Long id) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Document> res = session.createQuery("from Document where id = " + id).list();
+        session.getTransaction().commit();
+        return res.get(0);
+    }
+
+    public Long saveDocument(Document aDocument) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(aDocument);
+        session.getTransaction().commit();
+        return aDocument.getId();
+    }
+
+    public void updateDocument(Document aDocument) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.update(aDocument);
+        session.getTransaction().commit();
+    }
+
+    public Integer removeDocument(Long id) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        Query query = session.createQuery("delete from Document where id = " + id);
+        int i = new Integer(query.executeUpdate());
+        session.getTransaction().commit();
+        return i;
+    }
+
+    public List<Document> getDocumentsByProjectId(Long id) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Document> resId = session.createQuery("from Document where projectId = " + id).list();
+        session.getTransaction().commit();
+        return resId;
+    }
+
+    public List<Document> getDocumentsByPersonIdAndProjectId(Long personId, Long projectId) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Document> resId = session.createQuery("from Document where personId = " + personId + " and projectId = " + projectId).list();
+        session.getTransaction().commit();
+        return resId;
+    }
+
+    //projects
     public List<Project> getProjectsByPersonId(Long id) {
-        Person person = findPersonById(id);
-        return new ArrayList<Project>(person.getProjects());
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Person_Project> resId = session.createQuery("from Person_Project where personId = " + id).list();
+        session.getTransaction().commit();
+        List<Project> projectList = new ArrayList<Project>();
+        for(Person_Project i: resId) {
+            projectList.add(findProjectById(i.getProjectId()));
+        }
+        return projectList;
     }
 
     public Project findProjectById(Long id) {
@@ -43,7 +109,7 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     public Long saveProject(Project aProject) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        aProject.getPersons().add(new Person());
+//        aProject.getPersons().add(new Person());
         session.save(aProject);
         session.getTransaction().commit();
         return aProject.getId();
@@ -67,10 +133,38 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     }
 
     // persons
+    public Long addPersonToProject(Long personId, Long projectId) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        Person_Project save = new Person_Project();
+        save.setPersonId(personId);
+        save.setProjectId(projectId);
+        session.save(save);
+        session.getTransaction().commit();
+        return save.getId();
+    }
+
+    public int removeProjectFromPersonByIds(Long personId, Long projectId) {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        Query query = session.createQuery("delete from Person_Project where projectId = " + projectId + " and personId = " +personId);
+        int i = new Integer(query.executeUpdate());
+        session.getTransaction().commit();
+        return i;
+    }
 
     public List<Person> getPersonsByPprojectId(Long id) {
-        Project project = findProjectById(id);
-        return new ArrayList<Person>(project.getPersons());
+//        Project project = findProjectById(id);
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<Person_Project> resId = session.createQuery("from Person_Project where projectId = " + id).list();
+        session.getTransaction().commit();
+        List<Person> personList = new ArrayList<Person>();
+        for(Person_Project i: resId) {
+            personList.add(findPersonById(i.getPersonId()));
+        }
+        return personList;
+//        return new ArrayList<Person>(project.getPersons());
     }
 
     public Person login(String login, String password){

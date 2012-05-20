@@ -15,15 +15,15 @@ public class Person implements Serializable{
     private int role;
     private String login;
     private String password;
-    private Set<Project> projects = new HashSet<Project>(0);
+    //private Set<Project> projects = new HashSet<Project>(0);
 
-    public Set<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
-    }
+//    public Set<Project> getProjects() {
+//        return projects;
+//    }
+//
+//    public void setProjects(Set<Project> projects) {
+//        this.projects = projects;
+//    }
 
     public enum Role {
         Admin,
