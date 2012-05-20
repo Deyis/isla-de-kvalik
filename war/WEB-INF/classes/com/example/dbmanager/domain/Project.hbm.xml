@@ -9,7 +9,7 @@
 			<generator class="native"/>
 		</id>
 		<property name="name"/>
-        <property name="managerId"/>
+        <property name="managerId"  column="MANAGER_ID"/>
 
         <!--<set name="persons" table="PROJECT_PERSON" inverse="true" lazy="true" fetch="select">-->
             <!--<key>-->

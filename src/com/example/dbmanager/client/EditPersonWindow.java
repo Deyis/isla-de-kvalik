@@ -148,7 +148,7 @@ public class EditPersonWindow extends Window {
                                 thisWindow.close();
                                 thisWindow.reloadWindow();
 //                                projectWindow.close();
-//                                projectWindow.reloadProjects();
+//                                projectWindow.reloadDocuments();
                             }
                         });
                     }
