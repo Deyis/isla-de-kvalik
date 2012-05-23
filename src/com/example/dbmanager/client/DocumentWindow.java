@@ -77,14 +77,16 @@ public class DocumentWindow extends  Window{
                     public void handleEvent(BaseEvent be) {
                         if (docList.size() > 0) {
                             final Document updateDocument = docList.get(0);
-                            updateDocument.setName(editDocumentWindow.getFirstName());
-                            dbmanagerService.updateDocument(updateDocument, new AsyncCallback() {
+                            updateDocument.setName(editDocumentWindow.getName());
+                            updateDocument.setState(editDocumentWindow.getStateOfDoc());
+                            dbmanagerService.updateDocument(updateDocument, new AsyncCallback<Void>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
+                                    //To change body of implemented methods use File | Settings | File Templates.
                                 }
 
                                 @Override
-                                public void onSuccess(Object result) {
+                                public void onSuccess(Void result) {
                                     editDocumentWindow.close();
                                     documentWindow.close();
                                     reloadDocuments();

@@ -1,5 +1,6 @@
 package com.example.dbmanager.client;
 
+import com.example.dbmanager.domain.Document;
 import com.example.dbmanager.domain.Project;
 import com.extjs.gxt.ui.client.data.*;
 import com.extjs.gxt.ui.client.event.BaseEvent;
@@ -23,35 +24,37 @@ import java.util.List;
 public class EditDocumentWindow extends Window {
 
     private final DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
-    private final TextField firstNameTF = new TextField();
-    private final TextField lastNameTF = new TextField();
-    private final TextField ageTF = new TextField();
-    private final TextField roleTF = new TextField();
+    private final TextField idTF = new TextField();
+    private final TextField nameTF = new TextField();
+    private final TextField stateTF = new TextField();
+    private final TextField projectIdTF = new TextField();
+    private final TextField performerIdTF = new TextField();
     private final FormPanel formPanel = new FormPanel();
     private Long editPersonId  = new Long(0) ;
     private ModelData modelData;
 
 
-    public int getRoleTF() {
-        return Integer.decode(roleTF.getValue().toString());
+//    public int getNameTF() {
+//        return Integer.decode(nameTF.getValue().toString());
+//    }
+    public Document.State getStateOfDoc() {
+        return (Document.State) stateTF.getValue();
     }
-    public int getAge() {
-        return Integer.decode(ageTF.getValue().toString());
+    public String getName(){
+        return nameTF.getValue().toString();
     }
-    public String getFirstName(){
-        return firstNameTF.getValue().toString();
-    }
-    public String getLastName(){
-        return lastNameTF.getValue().toString();
-    }
+//    public String getLastName(){
+//        return lastNameTF.getValue().toString();
+//    }
 
     public EditDocumentWindow(){
         init();
         this.setHeading("Створення");
-        firstNameTF.setEmptyText("Введіть ім*я");
-        lastNameTF.setEmptyText("Введіть прізвище");
-        ageTF.setEmptyText("Введіть вік");
-        roleTF.setEmptyText("Введіть роль");
+//        idTF.setEmptyText("Введіть ім*я");
+        nameTF.setEmptyText("Введіть назву");
+        stateTF.setEmptyText("NEW");
+        projectIdTF.setEmptyText("Проект");
+        performerIdTF.setEmptyText("Виконавець");
         this.add(formPanel);
     }
 
@@ -60,10 +63,10 @@ public class EditDocumentWindow extends Window {
         modelData = model;
         init();
         this.setHeading("Редагування");
-        firstNameTF.setValue(model.get("firstName").toString());
-        lastNameTF.setValue(model.get("lastName").toString());
-        ageTF.setValue((Integer)model.get("age"));
-        roleTF.setValue((Integer)model.get("role"));
+        nameTF.setValue(model.get("name").toString());
+        stateTF.setValue(model.get("state").toString());
+        projectIdTF.setValue((Integer)model.get("projectId"));
+        performerIdTF.setValue((Integer)model.get("performerId"));
         this.add(formPanel);
     }
 
@@ -74,47 +77,50 @@ public class EditDocumentWindow extends Window {
 
         formPanel.setHeading("Edit Person");
         formPanel.setWidth(350);
-        firstNameTF.setAllowBlank(false);
-        firstNameTF.setFieldLabel("First Name");
-        lastNameTF.setAllowBlank(false);
-        lastNameTF.setFieldLabel("Last Name");
-        ageTF.setAllowBlank(false);
-        ageTF.setFieldLabel("Age");
-        roleTF.setAllowBlank(false);
-        roleTF.setFieldLabel("Role");
+        nameTF.setAllowBlank(false);
+        nameTF.setFieldLabel("Стан");
 
-        formPanel.add(firstNameTF, new FormData("100%"));
-        formPanel.add(lastNameTF, new FormData("100%"));
-        formPanel.add(ageTF, new FormData("100%"));
-        formPanel.add(roleTF, new FormData("100%"));
+        stateTF.setAllowBlank(false);
+        stateTF.setFieldLabel("Стан");
 
+        projectIdTF.setAllowBlank(false);
+        projectIdTF.setFieldLabel("Age");
 
-        if (editPersonId != 0) {
-            RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
-                @Override
-                protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {
-                    dbmanagerService.getProjectsByPersonId(editPersonId, callback);
-                }
-            };
-            BeanModelReader reader = new BeanModelReader();
+        performerIdTF.setAllowBlank(false);
+        performerIdTF.setFieldLabel("Role");
 
-            ListLoader<ListLoadResult<ModelData>> loader = new BaseListLoader<ListLoadResult<ModelData>>(proxy, reader);
-            final ListStore<BeanModel> store = new ListStore<BeanModel>(loader);
-            loader.load();
+        formPanel.add(nameTF, new FormData("100%"));
+        formPanel.add(stateTF, new FormData("100%"));
+        formPanel.add(projectIdTF, new FormData("100%"));
+        formPanel.add(performerIdTF, new FormData("100%"));
 
-            ColumnModel cm = new ColumnModel(getColumnConfig());
-
-            ContentPanel panel = new ContentPanel();
-            panel.setHeading("testTitle");
-            panel.setFrame(true);
-            panel.setSize("350", "150");
-            panel.setLayout(new FitLayout());
-
-            Grid<BeanModel> grid = new Grid<BeanModel>(store, cm);
-
-            panel.add(grid);
-            formPanel.add(panel);
-        }
+//
+//        if (editPersonId != 0) {
+//            RpcProxy<List<Project>> proxy = new RpcProxy<List<Project>>() {
+//                @Override
+//                protected void load(Object loadConfig, AsyncCallback<List<Project>> callback) {
+//                    dbmanagerService.getProjectsByPersonId(editPersonId, callback);
+//                }
+//            };
+//            BeanModelReader reader = new BeanModelReader();
+//
+//            ListLoader<ListLoadResult<ModelData>> loader = new BaseListLoader<ListLoadResult<ModelData>>(proxy, reader);
+//            final ListStore<BeanModel> store = new ListStore<BeanModel>(loader);
+//            loader.load();
+//
+//            ColumnModel cm = new ColumnModel(getColumnConfig());
+//
+//            ContentPanel panel = new ContentPanel();
+//            panel.setHeading("testTitle");
+//            panel.setFrame(true);
+//            panel.setSize("350", "150");
+//            panel.setLayout(new FitLayout());
+//
+//            Grid<BeanModel> grid = new Grid<BeanModel>(store, cm);
+//
+//            panel.add(grid);
+//            formPanel.add(panel);
+//        }
 
     }
 
