@@ -72,9 +72,22 @@ public class DBManagerServiceImpl extends RemoteServiceServlet implements
     public List<Document> getDocumentsByPersonIdAndProjectId(Long personId, Long projectId) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List<Document> resId = session.createQuery("from Document where performerId = " + personId + " and projectId = " + projectId).list();
+        List<Document> resId = session.createQuery("from Document where personId = " + personId + " and projectId = " + projectId).list();
         session.getTransaction().commit();
         return resId;
+    }
+
+    public List<Document> getDocumentsByOwnerId(Long ownerId) {
+        List<Document> list = getDocuments();
+        List<Document> resList = new ArrayList<Document>();
+        
+        for(Document document: list) {
+            Project tmp = findProjectById(document.getProjectId());
+            if(tmp.getManagerId() == ownerId) {
+                resList.add(document);
+            }
+        }
+        return resList;
     }
 
     //projects

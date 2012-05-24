@@ -34,6 +34,7 @@
         <mapping resource="com/example/dbmanager/domain/Person.hbm.xml"/>
         <mapping resource="com/example/dbmanager/domain/Project.hbm.xml"/>
         <mapping resource="com/example/dbmanager/domain/Person_Project.hbm.xml"/>
+        <mapping resource="com/example/dbmanager/domain/Document.hbm.xml"/>
 
     </session-factory>
 

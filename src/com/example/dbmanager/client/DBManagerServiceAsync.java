@@ -41,4 +41,5 @@ public interface DBManagerServiceAsync {
     void removeDocument(Long id, AsyncCallback<Integer> async);
     void getDocumentsByProjectId(Long id, AsyncCallback<List<Document>> async);
     void getDocumentsByPersonIdAndProjectId(Long personId, Long projectId, AsyncCallback<List<Document>> async);
+    void getDocumentsByOwnerId(Long ownerId, AsyncCallback<List<Document>> async);
 }

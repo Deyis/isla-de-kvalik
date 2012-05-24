@@ -8,10 +8,10 @@
 		<id name="id" column="DOCUMENT_ID">
 			<generator class="native"/>
 		</id>
-		<property name="name"/>
-		<property name="state"/>
-        <property name="projectId"/>
-        <property name="performerId"/>
+		<property name="name" column="NAME"/>
+		<property name="state" column="STATE"/>
+        <property name="projectId"  column="PROJECT_ID"/>
+        <property name="personId"  column="PERSON_ID"/>
 
 	</class>
 </hibernate-mapping>

@@ -15,10 +15,15 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class DBManager implements EntryPoint {
-    private final DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
+    private DBManagerServiceAsync dbmanagerService = GWT.create(DBManagerService.class);
     private PersonWindow personWindow = new PersonWindow();
     private ProjectWindow projectWindow = new ProjectWindow();
     private AppContext context;
+
+
+    public void init(DBManagerServiceAsync dbManagerService) {
+        this.dbmanagerService = dbManagerService;
+    }
 
     public void onModuleLoad() {
         Menu menuPersons = new Menu();

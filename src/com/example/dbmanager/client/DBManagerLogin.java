@@ -1,5 +1,6 @@
 package com.example.dbmanager.client;
 
+import com.example.dbmanager.domain.AppContext;
 import com.example.dbmanager.domain.Person;
 import com.extjs.gxt.ui.client.event.*;
 import com.extjs.gxt.ui.client.widget.Info;
@@ -60,9 +61,26 @@ public class DBManagerLogin implements EntryPoint {
                     @Override
                     public void onSuccess(Person result) {
                         loginWindow.setHeading("Success " + result.getLogin());
-                        if (result.getRole() == 1) {
-
+                        AppContext context = new AppContext();
+                        context.setCurrentPerson(result);
+                        switch (result.getRole()) {
+                            case 0: {
+                                DBManager homepage = new DBManager();
+                                homepage.init(dbmanagerService);
+                                homepage.onModuleLoad();
+                                break; }
+                            case 1: {
+                                ProgrammerEntryPoint programmerPage = new ProgrammerEntryPoint();
+                                programmerPage.init(dbmanagerService, context);
+                                programmerPage.onModuleLoad();
+                                break; }
+                            case 2: {
+                                ManagerEntryPoint managerPage = new ManagerEntryPoint();
+                                managerPage.init(dbmanagerService, context);
+                                managerPage.onModuleLoad();
+                                break;}
                         }
+                        loginWindow.hide();
                     }
                 });
             }

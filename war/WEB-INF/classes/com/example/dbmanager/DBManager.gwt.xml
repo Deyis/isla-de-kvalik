@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='dbmanager'>
   <inherits name="com.extjs.gxt.ui.GXT" />
-  <entry-point class='com.example.dbmanager.client.ProgrammerEntryPoint'/>
+  <entry-point class='com.example.dbmanager.client.DBManagerLogin'/>
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   <source path='shared'/>

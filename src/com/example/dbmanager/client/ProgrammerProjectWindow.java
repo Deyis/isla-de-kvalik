@@ -66,9 +66,15 @@ public class ProgrammerProjectWindow extends  Window{
                     public void onSuccess(Project result) {
                         pList.add(result);
                         context.setCurrentProject(pList.get(0));
-                        DocumentWindow documentWindow = new DocumentWindow(context);
-                        documentWindow.reloadDocuments();
-                        documentWindow.close();
+                        if (context.getCurrentPerson().getId() == context.getCurrentProject().getManagerId()) {
+                            SelectPersonToAddDocumentWindow nw = new SelectPersonToAddDocumentWindow();
+                            nw.reloadPersons(context);
+                            nw.close();
+                        } else {
+                            DocumentWindow documentWindow = new DocumentWindow(context);
+                            documentWindow.reloadDocuments();
+                            documentWindow.close();
+                        }
                     }
                 });
 

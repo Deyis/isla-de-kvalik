@@ -1,13 +1,12 @@
 package com.example.dbmanager.client;
 
+import com.example.dbmanager.domain.AppContext;
 import com.example.dbmanager.domain.Document;
-import com.example.dbmanager.domain.Project;
 import com.extjs.gxt.ui.client.data.*;
 import com.extjs.gxt.ui.client.event.BaseEvent;
 import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.store.ListStore;
-import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.Window;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.extjs.gxt.ui.client.widget.form.FormPanel;
@@ -32,29 +31,30 @@ public class EditDocumentWindow extends Window {
     private final FormPanel formPanel = new FormPanel();
     private Long editPersonId  = new Long(0) ;
     private ModelData modelData;
+    private AppContext context;
 
-
-//    public int getNameTF() {
-//        return Integer.decode(nameTF.getValue().toString());
-//    }
-    public Document.State getStateOfDoc() {
-        return (Document.State) stateTF.getValue();
+    public String getStateOfDoc() {
+        return  stateTF.getValue().toString();
     }
     public String getName(){
         return nameTF.getValue().toString();
     }
-//    public String getLastName(){
-//        return lastNameTF.getValue().toString();
-//    }
+    public Long getProjectId(){
+        return new Long(Integer.decode(projectIdTF.getValue().toString()));
+    }
+    public Long getPerformerId(){
+        return new Long(Integer.decode(performerIdTF.getValue().toString()));
+    }
 
-    public EditDocumentWindow(){
+    public EditDocumentWindow(AppContext appContext){
+        context = appContext;
         init();
         this.setHeading("Створення");
 //        idTF.setEmptyText("Введіть ім*я");
         nameTF.setEmptyText("Введіть назву");
-        stateTF.setEmptyText("NEW");
-        projectIdTF.setEmptyText("Проект");
-        performerIdTF.setEmptyText("Виконавець");
+        stateTF.setValue("NEW");
+        projectIdTF.setValue(context.getCurrentProject().getId());
+        performerIdTF.setValue(context.getCurrentPerson().getId());
         this.add(formPanel);
     }
 
@@ -65,8 +65,8 @@ public class EditDocumentWindow extends Window {
         this.setHeading("Редагування");
         nameTF.setValue(model.get("name").toString());
         stateTF.setValue(model.get("state").toString());
-        projectIdTF.setValue((Integer)model.get("projectId"));
-        performerIdTF.setValue((Integer)model.get("performerId"));
+        projectIdTF.setValue((Long)model.get("projectId"));
+        performerIdTF.setValue((Long)model.get("personId"));
         this.add(formPanel);
     }
 
@@ -83,11 +83,12 @@ public class EditDocumentWindow extends Window {
         stateTF.setAllowBlank(false);
         stateTF.setFieldLabel("Стан");
 
+
         projectIdTF.setAllowBlank(false);
-        projectIdTF.setFieldLabel("Age");
+        projectIdTF.setFieldLabel("Project id");
 
         performerIdTF.setAllowBlank(false);
-        performerIdTF.setFieldLabel("Role");
+        performerIdTF.setFieldLabel("performer id");
 
         formPanel.add(nameTF, new FormData("100%"));
         formPanel.add(stateTF, new FormData("100%"));

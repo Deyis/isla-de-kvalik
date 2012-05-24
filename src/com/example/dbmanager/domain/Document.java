@@ -1,36 +1,34 @@
 package com.example.dbmanager.domain;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Document implements Serializable {
 
-    public enum State {
-        NEW, ACCEPTED, TEST, FEEDBACK, FIXED
-    }
+//    public enum String {
+//        NEW, ACCEPTED, TEST, FEEDBACK, FIXED
+//    }
 
     private Long id;
     private String name;
-    private State state;
+    private String state;
     private Long projectId;
-    private Long performerId;
+    private Long personId;
 
 
-    public State getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(State state) {
+    public void setState(String state) {
         this.state = state;
     }
 
-    public Long getPerformerId() {
-        return performerId;
+    public Long getPersonId() {
+        return personId;
     }
 
-    public void setPerformerId(Long performerId) {
-        this.performerId = performerId;
+    public void setPersonId(Long performerId) {
+        this.personId = performerId;
     }
 
     public Long getProjectId() {
